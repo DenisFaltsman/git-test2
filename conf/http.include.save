@@ -1,0 +1,72 @@
+<VirtualHost *:80>
+        ServerName yii2.dev
+        ServerAdmin apache@localhost
+        DocumentRoot "/var/www/vhosts/yii2/httpdocs"
+
+        <Directory "/var/www/vhosts/yii2/httpdocs">
+                Options Indexes FollowSymLinks
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+        </Directory>
+        
+        <IfModule mpm_peruser_module>
+                ServerEnvironment www-data www-data 
+        </IfModule>
+        ErrorLog /var/www/vhosts/yii2/logs/error.log
+        Include /var/www/vhosts/yii2/conf/vhost.conf
+</VirtualHost>
+<VirtualHost *:80>
+        ServerName www.yii2.dev
+        ServerAdmin apache@localhost
+        DocumentRoot "/var/www/vhosts/yii2/httpdocs"
+
+        <Directory "/var/www/vhosts/yii2/httpdocs">
+                Options Indexes FollowSymLinks
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+        </Directory>
+        
+        <IfModule mpm_peruser_module>
+                ServerEnvironment www-data www-data 
+        </IfModule>
+        ErrorLog /var/www/vhosts/yii2/logs/error.log
+        Include /var/www/vhosts/yii2/conf/vhost.conf
+</VirtualHost>
+<VirtualHost *:80>
+        ServerName sub1.yii2.dev
+        ServerAdmin apache@localhost
+        DocumentRoot "/var/www/vhosts/yii2/subdomains/sub1/httpdocs"
+
+        <Directory "/var/www/vhosts/yii2/subdomains/sub1/httpdocs">
+                Options Indexes FollowSymLinks
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+        </Directory>
+        
+        <IfModule mpm_peruser_module>
+                ServerEnvironment www-data www-data 
+        </IfModule>
+        ErrorLog /var/www/vhosts/yii2/logs/error.log
+         
+</VirtualHost>
+<VirtualHost *:80>
+        ServerName db.yii2.dev
+        ServerAdmin apache@localhost
+        DocumentRoot "/var/www/vhosts/yii2/db"
+
+        <Directory "/var/www/vhosts/yii2/db">
+                Options Indexes FollowSymLinks
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+        </Directory>
+        
+        <IfModule mpm_peruser_module>
+                ServerEnvironment www-data www-data 
+        </IfModule>
+        ErrorLog /var/www/vhosts/yii2/logs/error.log
+         
+</VirtualHost>
