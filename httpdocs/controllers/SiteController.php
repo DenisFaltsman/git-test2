@@ -12,6 +12,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntryForm;
 use app\models\MyForm;
+use app\models\Country;
 
 
 class SiteController extends Controller
@@ -170,6 +171,13 @@ class SiteController extends Controller
 {
   return $this->render('test');
 
+}
+
+
+public function actionCountry() {
+  $countries = Country::find()->all();
+
+  return $this->render('country', ['countries' => $countries]);
 }
 
 }
